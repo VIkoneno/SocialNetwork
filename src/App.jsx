@@ -1,32 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
+import Profile from "./components/Profile/Profile";
+import Dialogs from "./components/Dialogs/Dialogs";
+import {BrowserRouter, Route} from "react-router-dom";
 
-const App = () => {
-  return (
-    <div>
-        <Header />
-      <Technologies/>  
-    </div>);
-}
+let App;
+App = (props) => {
+    return (
+        <BrowserRouter>
+            <div className='app-wrapper'>
+                <Header/>
+                <Navbar/>
+                {/*<Profile/>*/}
+                <div class='app-wrapper-content'>
+                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/profile' component={Profile}/>
+                    {/*<Dialogs/>*/}
+                </div>
+            </div>
+        </BrowserRouter>
+            )
 
-const  Technologies = () => {
-  return (
-  <div>
-      <ul>
-         <li>css</li>
-         <li>html</li>
-         <li>js</li>
-         <li>react</li>
-     </ul>
-    </div>
-  )
-}
+            }
 
-const Header = () => {
-  return (<div>
-    <a href='#s'>home</a>
-    <a href='#s'>New Feed</a>
-    <a href='#s'>Messages</a>
-  </div>);
-}
-export default App;
+            export default App;
