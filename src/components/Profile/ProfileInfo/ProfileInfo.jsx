@@ -1,15 +1,13 @@
 import React from 'react';
-import s from './Profile.module.css';
-import MyPosts from "./MyPosts/MyPosts";
+import s from './ProfileInfo.module.css';
 
 const ProfileInfo = () => {
     return (
-        <div className={s.content}>
-            <ProfileInfo />
+        <div>
             <div>
                 ava + description
             </div>
-            <MyPosts/>
+
         </div>
     )
 }
